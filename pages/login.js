@@ -20,9 +20,24 @@ export default function Login() {
     return (
         <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8"
             style={{
-                background: 'linear-gradient(to bottom, #f5f1e8 0%, #e8dcc8 100%)',
+                backgroundImage: 'url(/logo.png)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                position: 'relative',
                 fontFamily: "'Playfair Display', 'Georgia', serif"
             }}>
+            {/* Semi-transparent overlay for readability */}
+            <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                backgroundColor: 'rgba(245, 241, 232, 0.85)',
+                backdropFilter: 'blur(2px)'
+            }} />
+
             <Head>
                 <title>Timeless Treasures - Sign In</title>
                 <meta name="description" content="Sign in to your Timeless Treasures account" />
@@ -147,7 +162,7 @@ export default function Login() {
                 }
             `}</style>
 
-            <div className="max-w-md w-full">
+            <div className="max-w-md w-full" style={{ position: 'relative', zIndex: 1 }}>
                 {/* Ornamental top decoration */}
                 <div className="text-center mb-6">
                     <div className="ornament">❦</div>
